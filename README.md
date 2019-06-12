@@ -13,7 +13,7 @@
       <li><a href="#Cadastro">Efetuando Login</a></li>
       <li><a href="#Cadastro">Inserindo um planeta</a></li>
       <li><a href="#Lista">Listando todos os planetas</a></li>
-      <li><a href="#buscaid">Fazendo busca por ID</a></li>
+      <li><a href="#buscaid">Pesquisar planeta</a></li>
       <li><a href="#update">Atualização de um planeta</a></li>
       <li><a href="#deleta">Deletando um planeta</a></li>
     </ol>
