@@ -29,19 +29,17 @@
 ### <a name="Tecnologias">2.Tecnologias utilizadas</a> 
 &nbsp;&nbsp;&nbsp;&nbsp;A linguagem a ser usada, foi PHP na versão 7.2, juntamente com SLIM, um framework da linguagem, e banco de dados MYSQL. Na parte do front-end, foi utilizada o framework JQUERY.
 O teste da API foi feito através do POSTMAN.
-O sistema operacional utlizado foi o Linux Ubuntu 18.04. 
+O sistema operacional utlizado foi o Linux Ubuntu 18.04 e IDE Sublime Text. 
 
 ### <a name="Config">3.Configurando a API</a>  
-&nbsp;&nbsp;&nbsp;&nbsp;Para utilizar o projeto deverá ser instalado o <a href="http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html">Java SDK 8</a>, o Eclipse, 
-preferencialmente modificado para o Spring Boot(<a href="https://spring.io/tools/sts/all">Spring Tools Suite</a>) e o 
-<a href="https://www.mongodb.com/download-center?jmp=nav#community">MongoDB Community Server</a> baseado em seu sistema operacional.
-&nbsp;&nbsp;&nbsp;&nbsp;Após isso Efetuar o download do projeto e inserir o mesmo no diretorio raiz do seu workspace do Eclipse.
+&nbsp;&nbsp;&nbsp;&nbsp;Para utilizar a API, precisa apenas da instalação do Apache, PHP e MYSQL. Wamp para Windows, Lamp para Linux e Mamp para Mac. É necessário o arquivo .HTACCESS na pasta raiz para que o projeto funcione corretamente. No caso do Linux, para habilitar o arquivo .HTACCESS, apenas inserir os códigos abaixo no terminal: 
 
-Para utilizar a API, precisa apenas da instalação do Apache, PHP e MYSQL. Wamp para Windows, Lamp para Linux e Mamp para Mac. É necessário o arquivo .HTACCESS na pasta raiz para que o projeto funcione corretamente. No caso do Linux, para habilitar o arquivo .HTACCESS, apenas inserir os códigos abaixo no terminal: 
-
-"
+```
 sudo nano /etc/apache2/sites-available/000-default.conf
-"
+```
+
+Após abrir o arquivo 000-default.conf conforme o comando acima, inserir o codigo abaixo dentro do bloco de código ```<VirtualHost *:80></VirtualHost>```
+
 ```
 <Directory "/var/www/html/name-your-directory"> # coloque o nome do seu diretorio do Apache
         Options Indexes FollowSymLinks MultiViews
