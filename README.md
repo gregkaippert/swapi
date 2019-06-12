@@ -100,5 +100,5 @@ A listagem também conta com um recurso de paginação.
 
 ### <a name="conclusao">Conclusão</a>
 
-Thought of the day: Maybe not, the force **<span style="font-size: 25px">will always</span>** be with you.
+Thought of the day: Maybe not, the force **<span style="font-size:5em;">will always</span>** be with you.
 Pensamento do dia: Talvez não, a força **<sub>sempre irá</sub>** estar com você.
