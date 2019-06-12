@@ -2,7 +2,7 @@
   <img src="img/star-wars.jpg"/> 
 </div>
 
-# API STAR - Gregory Kaippert do Carmo
+# API STAR WARS - Gregory Kaippert do Carmo
 
 <ol>
   <li><a href="#Sobre">Sobre o projeto</a></li>
