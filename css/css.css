@@ -1,0 +1,89 @@
+/*    --------------------------------------------------
+	:: Login Section
+	-------------------------------------------------- */
+#login .form-wrap {
+    width: 330px;
+    margin: 20px auto 0 auto;
+}
+@media (max-width: 767px){
+	#login .form-wrap{
+	width: 90%;
+	}
+	#btn-voltar{
+	float:left;
+	width:50% !important;
+	margin-right:0px !important;
+		}
+        #btn-entrar{
+	width:50% !important;
+	}
+	}
+#login h1 {
+	padding-top:25px;
+    text-align: center;
+    padding-bottom: 20px;
+	font-weight:lighter;
+	letter-spacing:-1px;
+}
+#login .form-group {
+    margin-bottom: 25px;
+}
+#login .btn.btn-custom {
+    font-size: 16px;
+	margin-bottom: 20px;
+}
+#login .forget {
+    font-size: 13px;
+	text-align: center;
+	display: block;
+}
+
+.label-senha{
+	width:100%;
+	font-size:16px;
+	text-align:center;
+	}
+.voltar:hover, .proximo:hover, .entrar:hover{
+	outline-offset: -3px;
+outline: 2px solid gray;
+	}
+	
+.alertas, .alertas-senhas{
+	color:#e81123;
+	text-align:justify;
+	margin-bottom:5px;
+	}
+
+/*    --------------------------------------------------
+	:: Inputs & Buttons
+	-------------------------------------------------- */
+.form-control {
+    color: #212121;
+}
+.btn-custom {
+    color: #fff;
+	background-color: #1fa67b;
+}
+.btn-custom:hover,
+.btn-custom:focus {
+    color: #fff;
+}
+
+/*    --------------------------------------------------
+    :: Footer
+	-------------------------------------------------- */
+#footer {
+    color: #6d6d6d;
+    font-size: 12px;
+    text-align: center;
+}
+#footer p {
+    margin-bottom: 0;
+}
+#footer a {
+    color: inherit;
+}
+
+.paginacao {
+    margin-bottom: 30px;
+}

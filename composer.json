@@ -1,12 +1,16 @@
 {
 	"require": {
-		"slim/slim": "^3.12"
+		"slim/slim": "^3.12",
+		"slim/php-view": "^2.2"
 	},
 	"autoload":{
-		"psr-4":{
+		"psr-4": {
 			"controllers\\":"app/controllers/",
 			"models\\":"app/models/",
 			"config\\":"app/config/"
-		}
+		},
+		"files": [
+            "app/functions.php"
+        ]
 	}
 }

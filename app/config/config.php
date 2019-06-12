@@ -6,6 +6,8 @@ define("USER", "root");
 define("PASS", "admin");
 
 # verifica se está em ambiente de desenvolvimento para exibir os erros, caso contrario não exibe os erros
+$slimSettings = array('determineRouteBeforeAppMiddleware' => true);
+
 define("ENVIRONMENT", "dev");
 if (ENVIRONMENT === 'dev')
 {

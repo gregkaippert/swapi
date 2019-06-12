@@ -9,6 +9,7 @@ return array(
     'models\\' => array($baseDir . '/app/models'),
     'controllers\\' => array($baseDir . '/app/controllers'),
     'config\\' => array($baseDir . '/app/config'),
+    'Slim\\Views\\' => array($vendorDir . '/slim/php-view/src'),
     'Slim\\' => array($vendorDir . '/slim/slim/Slim'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),

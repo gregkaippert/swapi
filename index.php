@@ -1,75 +1,63 @@
-<?php
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+<meta name="author" content="Gregory Kaippert do Carmo">
+<meta name="author" content="Robson Carmo">
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/css.css" type="text/css">
+<link rel="shortcut icon" href="img/favicon.ico">
+<script src="js/jquery.min.js"></script>
+<script src="js/tether.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/login.js"></script>
+</head>
 
-require_once('vendor/autoload.php');
-require_once('app/config/config.php');
+<body>
+<div id="img-gif"></div>
+<section id="login">
+    <div class="container">
+    	<div class="row">
+    	    <div class="col-xs-12">
+        	    <div class="form-wrap">
+                <img src="img/sw.jpg" class="img-responsive center-block">
+                <h1 class="txt-entrar">Entrar</h1><h1 class="ins-senha">Insira a senha</h1>
+                    <form role="form" action="javascript:;" method="post" id="login-form" name="logar" autocomplete="off">
+                        <div class="form-group label-senha">
+                            <label for="senha"></label>
+                        </div>
+                        <div class="form-group campo-email">
+                        	<div class="alertas"></div> <!-- alertas do campo email -->
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="alertas-senhas"></div> <!-- alertas do campo senha -->
+                        <div class="form-group campo-senha">
+                            <label for="senha" class="sr-only">Senha</label>
+                            <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha">
+                        </div>
+                        <input id="btn-voltar" class="btn btn-default btn-lg btn-block voltar" value="Voltar">
+                        <input type="submit" id="btn-proximo" class="btn btn-custom btn-lg btn-block proximo" value="Próximo">
+                        <input type="submit" id="btn-entrar" class="btn btn-custom btn-lg btn-block entrar" value="Entrar">
+                    </form>
+                    
+                    <hr>
+        	    </div>
+    		</div> <!-- /.col-xs-12 -->
+    	</div> <!-- /.row -->
+    </div> <!-- /.container -->
+</section>
 
-use controllers\planetas;
-use models\planet;
-
-$app = new Slim\App($slimConfig);
-
-$app->group('/api', function() use($app){
-
-	$app->get('[/]', function(){
-		
-		$planet = new planet;
-		$planet->listAll();
-
-	});
-
-	$app->get('/listAttr/{id_name}[/]', function($request, $response, $args){
-		$id_name = strip_tags(trim(isset($args['id_name']) ? $args['id_name'] : ''));
-		$planet = new planet;
-		$planet->setId_Name($id_name);
-		$planet->listAttr();
-	});
-
-	$app->delete('/delete/{id_planet}[/]', function($request, $response, $args){
-		$id_planet = strip_tags(trim(isset($args['id_planet']) ? $args['id_planet'] : ''));
-		$planet = new planet;
-		$planet->setId($id_planet);
-		$planet->delete();
-	});
-
-	$app->post('/update[/]', function($request){
-		$data = json_decode($request->getBody());
-		$nome = strip_tags(trim($data->nome) ? $data->nome : '');
-		$clima = strip_tags(trim(isset($data->clima) ? $data->clima : ''));
-		$terreno = strip_tags(trim(isset($data->terreno) ? $data->terreno : ''));
-		$id = strip_tags(trim(isset($data->id) ? $data->id : ''));
-		$planet = new planet;
-		$planet->setNome($nome);
-		$planet->setClima($clima);
-		$planet->setTerreno($terreno);
-		$planet->setId($id);
-		$planet->update();
-	});
-
-	$app->post('/insert[/]', function($request){
-		$data = json_decode($request->getBody());
-		$nome = strip_tags(trim($data->nome) ? $data->nome : '');
-		$clima = strip_tags(trim(isset($data->clima) ? $data->clima : ''));
-		$terreno = strip_tags(trim(isset($data->terreno) ? $data->terreno : ''));
-		$planet = new planet;
-		$planet->setNome($nome);
-		$planet->setClima($clima);
-		$planet->setTerreno($terreno);
-		$planet->adicionar();
-	});
-
-	$app->get('/films/{planet}[/]', function($request, $response, $args){
-		$planet = strip_tags(trim($args['planet']) ? $args['planet'] : '');
-		$dados = json_decode(@file_get_contents('https://swapi.co/api/planets/'.$planet));
-		
-		if($dados === NULL):
-		    $error = error_get_last();
-		    $exp = explode('HTTP/1.1 ', $error['message']);
-		    echo json_encode(array("code"=>intval($exp[1]),"message"=>"error"));
-		else:
-			echo json_encode(array("nome"=>$dados->name, "clima"=>$dados->climate, "terreno"=>$dados->terrain, "filmes"=>$dados->films));
-		endif;
-	});
-
-});
-
-$app->run();
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <p>Direitos reservados © - <?php echo date('Y') ?></p>
+                <p>Desenvolvido por <strong><a href="#" target="_blank">Gregory Kaippert</a></strong></p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

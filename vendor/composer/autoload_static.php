@@ -8,6 +8,7 @@ class ComposerStaticInite4f7b9a462e4f10727a1185994248486
 {
     public static $files = array (
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
+        'cadc9c721433675b17f426e6ddd5daa4' => __DIR__ . '/../..' . '/app/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -22,6 +23,7 @@ class ComposerStaticInite4f7b9a462e4f10727a1185994248486
         ),
         'S' => 
         array (
+            'Slim\\Views\\' => 11,
             'Slim\\' => 5,
         ),
         'P' => 
@@ -51,6 +53,10 @@ class ComposerStaticInite4f7b9a462e4f10727a1185994248486
         'config\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/config',
+        ),
+        'Slim\\Views\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/slim/php-view/src',
         ),
         'Slim\\' => 
         array (
