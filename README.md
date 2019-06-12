@@ -33,7 +33,7 @@ O sistema operacional utlizado foi o Linux Ubuntu 18.04 e IDE Sublime Text.
 
 ### <a name="config">3.Configurando a API</a>  
 &nbsp;&nbsp;&nbsp;&nbsp;Para utilizar a API, precisa apenas da instalação do Apache, PHP e MYSQL. ***Wamp para Windows, Lamp para Linux e Mamp para Mac***. É necessário o arquivo .HTACCESS na pasta raiz para que o projeto funcione corretamente. 
-**No caso do Linux, para habilitar o arquivo .HTACCESS, apenas inserir os códigos abaixo no terminal:** 
+>No caso do Linux, para habilitar o arquivo .HTACCESS, apenas inserir os códigos abaixo no terminal:
 
 ```
 sudo nano /etc/apache2/sites-available/000-default.conf
@@ -76,7 +76,8 @@ Foi utilizado uma função própria para criptografar a senha, tornando-a mais s
 
 ### <a name="read">III. Listando todos os planetas</a>
 
-&nbsp;&nbsp;&nbsp;&nbsp;A listagem é feita com o método **GET** para a rota ```/list/``` que retorna todos os dados sem exceção, como id, nome, clima e terreno. Se não conter planetas cadastrados, retorna uma mensagem informando que não tem planetas cadastrados.
+&nbsp;&nbsp;&nbsp;&nbsp;A listagem é feita com o método **GET** para a rota ```/list/``` que retorna todos os dados sem exceção, como id, nome, clima e terreno. Se não conter planetas cadastrados, retorna uma mensagem informando que não tem planetas cadastrados. 
+A listagem também conta com um recurso de paginação.
 
 ### <a name="readId">IV. Pesquisar planeta</a>
 
