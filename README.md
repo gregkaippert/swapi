@@ -11,11 +11,11 @@
   <li><a href="#Funcionalidades">Funcionalidades</a>
     <ol>
       <li><a href="#Cadastro">Efetuando Login</a></li>
-      <li><a href="#Cadastro">Inserindo um planeta</a></li>
-      <li><a href="#Lista">Listando todos os planetas</a></li>
-      <li><a href="#buscaid">Pesquisar planeta</a></li>
+      <li><a href="#insert">Inserindo um planeta</a></li>
+      <li><a href="#read">Listando todos os planetas</a></li>
+      <li><a href="#readId">Pesquisar planeta</a></li>
       <li><a href="#update">Atualização de um planeta</a></li>
-      <li><a href="#deleta">Deletando um planeta</a></li>
+      <li><a href="#delete">Deletando um planeta</a></li>
     </ol>
   </li>
   <li><a href="#final">Considerações finais</a>
@@ -70,22 +70,22 @@ Senha: 12345
 
 Foi utilizado uma função própria para criptografar a senha, tornando-a mais segura.
 
-#### <a name="Cadastro">II. Cadastrando um planeta:</a>
+#### <a name="insert">II. Cadastrando um planeta:</a>
 
 &nbsp;&nbsp;&nbsp;&nbsp;Para inserir um registro no banco de dados, é feito um pedido com o método **POST** para a rota ```/inserir/```, que irá validar se possui entrada vazia, caso positivo, informa ao usuário que há campos obrigatórios vazios, caso contrário, grava os dados.
 
-### <a name="Lista">III. Listando todos os planetas</a>
+### <a name="read">III. Listando todos os planetas</a>
 
 &nbsp;&nbsp;&nbsp;&nbsp;A listagem é feita com o método **GET** para a rota ```/list/``` que retorna todos os dados sem exceção, como id, nome, clima e terreno. Se não conter planetas cadastrados, retorna uma mensagem informando que não tem planetas cadastrados.
 
-### <a name="buscaid">IV. Pesquisar planeta</a>
+### <a name="readId">IV. Pesquisar planeta</a>
 
 &nbsp;&nbsp;&nbsp;&nbsp;Cada listagem irá conter um campo do tipo ```<button>``` chamado Filmes que guarda um valor com seu ID para enviar uma requisição para API da SWAPI, que retornará os filmes relacionados com aquele planeta, cujos os id's são iguais.
 
-### <a name="buscaid">V. Atualização de um planeta</a>
+### <a name="update">V. Atualização de um planeta</a>
 
 &nbsp;&nbsp;&nbsp;&nbsp;Para atualizar um planeta, um requisito é feito com o método **POST** para a rota ```/update/```, que irá exibir uma janela modal para a edição dos dados, não podendo deixar nenhum campo vazio. 
 
-### <a name="deleta">VI. Deletando um planeta</a>
+### <a name="delete">VI. Deletando um planeta</a>
 
 &nbsp;&nbsp;&nbsp;&nbsp;Para deletar, basta fazer uma requisição com o método **DELETE** para a rota ```/delete/{id_planet}/```, passando o id como parâmetro. 
