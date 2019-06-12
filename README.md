@@ -33,6 +33,7 @@ O sistema operacional utlizado foi o Linux Ubuntu 18.04 e IDE Sublime Text.
 
 ### <a name="config">3.Configurando a API</a>  
 &nbsp;&nbsp;&nbsp;&nbsp;Para utilizar a API, precisa apenas da instalação do Apache, PHP e MYSQL. ***Wamp para Windows, Lamp para Linux e Mamp para Mac***. É necessário o arquivo .HTACCESS na pasta raiz para que o projeto funcione corretamente. 
+
 >No caso do Linux, para habilitar o arquivo .HTACCESS, apenas inserir os códigos abaixo no terminal:
 
 ```
