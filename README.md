@@ -8,10 +8,10 @@
   <li><a href="#Sobre">Sobre o projeto</a></li>
   <li><a href="#Tecnologias">Tecnologias utilizadas</a></li>
   <li><a href="#Config">Configurando a API</a></li>
-  <li><a href="#Testes">Efetuando testes</a></li>
   <li><a href="#Funcionalidades">Funcionalidades</a>
     <ol>
-      <li><a href="#Insere">Inserindo um planeta</a></li>
+      <li><a href="#Cadastro">Efetuando Login</a></li>
+      <li><a href="#Cadastro">Inserindo um planeta</a></li>
       <li><a href="#Lista">Listando todos os planetas</a></li>
       <li><a href="#buscaid">Fazendo busca por ID</a></li>
       <li><a href="#buscanome">Fazendo busca por NOME</a></li>
@@ -32,7 +32,7 @@ O teste da API foi feito através do POSTMAN.
 O sistema operacional utlizado foi o Linux Ubuntu 18.04 e IDE Sublime Text. 
 
 ### <a name="Config">3.Configurando a API</a>  
-&nbsp;&nbsp;&nbsp;&nbsp;Para utilizar a API, precisa apenas da instalação do Apache, PHP e MYSQL. Wamp para Windows, Lamp para Linux e Mamp para Mac. É necessário o arquivo .HTACCESS na pasta raiz para que o projeto funcione corretamente. 
+&nbsp;&nbsp;&nbsp;&nbsp;Para utilizar a API, precisa apenas da instalação do Apache, PHP e MYSQL. ***Wamp para Windows, Lamp para Linux e Mamp para Mac***. É necessário o arquivo .HTACCESS na pasta raiz para que o projeto funcione corretamente. 
 **No caso do Linux, para habilitar o arquivo .HTACCESS, apenas inserir os códigos abaixo no terminal:** 
 
 ```
@@ -49,9 +49,39 @@ Após abrir o arquivo 000-default.conf conforme o comando acima, inserir o codig
 </Directory>
 ```
 
-Depois de feito toda as etapas anterior e certificar que o ambiente de desenvolvimento está executando com sucesso, próxima e última etapa é alterar a configuração do banco de dados. O caminho do arquivo para editar é: 
+Depois de feito toda as etapas anterior e certificar que o ambiente de desenvolvimento está executando com sucesso, próxima e última etapa é alterar a configuração do banco de dados de acordo com seu sistema operacional. O caminho do arquivo para editar é: 
 
 > **S.O Linux**: /var/www/html/planetas/app/config/config.php ou /var/wwww/planetas/app/config/config.php
 
 > **S.O Windows**: C:wamp/www/planetas/app/config/config.php
 
+### <a name="Funcionalidades">4.Funcionalidades</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;As funcionalidades desse sistema é basicamente um CRUD(CREATE, READ, UPDATE AND DELETE), que para um melhor entendimento, significa CRIAR, LER, ATUALIZAR E DELETAR:
+
+#### <a name="Login">I. Efetuando Login:</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;Você pode usar um login que já está cadastrado no banco de dados por padrão.
+
+```
+Login: admin@admin.com
+Senha: 12345
+```
+
+Foi utilizado uma função própria para criptografar a senha, tornando-a mais segura.
+
+#### <a name="Cadastro">I. Cadastrando um planeta:</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;Para inserir um registro no banco de dados, é feito um pedido com o método **POST** para a rota /inserir/, que irá validar se possui entrada vazia, caso positivo, informa ao usuário que há campos obrigatórios vazios, caso contrário, grava os dados.
+
+### <a name="Lista">Listando todos os planetas</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;A listagem é feita com o método **GET** para a rota /list/ que retorna todos os dados sem exceção, como id, nome, clima e terreno. Se não conter planetas cadastrados, retorna uma mensagem informando que não tem planetas cadastrados.
+
+### <a name="buscaid">Fazendo busca por ID</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;Cada listagem irá conter um campo do tipo ```<button>``` chamado Filmes que guarda um valor com seu ID para enviar uma requisição para API da SWAPI, que retornará os filmes relacionados com aquele planeta, cujos os id's são iguais.
+
+### <a name="deleta">Deletando um planeta</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;Para deletar, basta fazer uma requisição com o método **DELETE** para a rota /delete/{id_planet}/, passando o id como parâmetro. 
