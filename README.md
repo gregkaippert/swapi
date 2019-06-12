@@ -21,3 +21,11 @@
   <li><a href="#final">Considerações finais</a>
  
 </ol>
+
+### <a name="Sobre">1. Sobre o sistema</a> 
+
+&nbsp;&nbsp;&nbsp;&nbsp; O sistema foi desenvolvido baseado nos requisitos fornecidos, como nome do planeta, clima e terreno e aparições de cada planeta nos filmes que se encontra armazenada na API SWAPI. 
+
+### <a name="Tecnologias">2.Tecnologias utilizadas</a> 
+&nbsp;&nbsp;&nbsp;&nbsp;A linguagem a ser usada, foi PHP na versão 7.2, juntamente com SLIM, um framework da linguagem, e banco de dados MYSQL. Na parte do front-end, foi utilizada o framework JQUERY.
+O teste da API foi feito através do POSTMAN. 
