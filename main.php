@@ -131,9 +131,9 @@
 				<div class="row">
 					<div class="col-sm-2 total"></div> <!-- exibe o total de planetas -->
 					<div class="paginacao col-sm-8">
-						<button id="anterior" disabled>&lsaquo; Anterior</button>
+						<button id="anterior" disabled class="btn btn-light">&lsaquo; Anterior</button>
 						    <span id="numeracao"></span>
-						<button id="proximo" disabled>Próximo &rsaquo;</button>
+						<button id="proximo" disabled class="btn btn-light">Próximo &rsaquo;</button>
 					</div>
 				</div>
 				<!-- fim dos botoes da paginacao -->
