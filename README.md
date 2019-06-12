@@ -39,9 +39,9 @@ preferencialmente modificado para o Spring Boot(<a href="https://spring.io/tools
 
 Para utilizar a API, precisa apenas da instalação do Apache, PHP e MYSQL. Wamp para Windows, Lamp para Linux e Mamp para Mac. É necessário o arquivo .HTACCESS na pasta raiz para que o projeto funcione corretamente. No caso do Linux, para habilitar o arquivo .HTACCESS, apenas inserir os códigos abaixo no terminal: 
 
-```
+"
 sudo nano /etc/apache2/sites-available/000-default.conf
-```
+"
 ```
 <Directory "/var/www/html/name-your-directory"> # coloque o nome do seu diretorio do Apache
         Options Indexes FollowSymLinks MultiViews
