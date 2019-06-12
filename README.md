@@ -18,7 +18,7 @@
       <li><a href="#delete">Deletando um planeta</a></li>
     </ol>
   </li>
-  <li><a href="#final">Considerações finais</a>
+  <!--<li><a href="#final">Considerações finais</a>-->
  
 </ol>
 
@@ -58,7 +58,7 @@ sudo service apache2 restart
 
 Depois de feito toda as etapas anterior e certificar que o ambiente de desenvolvimento está executando com sucesso, próxima e última etapa é alterar a configuração do banco de dados de acordo com seu sistema operacional. O caminho do arquivo para editar é: 
 
-> **S.O Linux**: /var/www/html/planetas/app/config/config.php ou /var/wwww/planetas/app/config/config.php
+> **S.O Linux**: /var/www/html/planetas/app/config/config.php **OU** /var/wwww/planetas/app/config/config.php
 
 > **S.O Windows**: C:wamp/www/planetas/app/config/config.php
 
