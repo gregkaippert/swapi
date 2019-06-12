@@ -32,7 +32,8 @@ O teste da API foi feito através do POSTMAN.
 O sistema operacional utlizado foi o Linux Ubuntu 18.04 e IDE Sublime Text. 
 
 ### <a name="Config">3.Configurando a API</a>  
-&nbsp;&nbsp;&nbsp;&nbsp;Para utilizar a API, precisa apenas da instalação do Apache, PHP e MYSQL. Wamp para Windows, Lamp para Linux e Mamp para Mac. É necessário o arquivo .HTACCESS na pasta raiz para que o projeto funcione corretamente. No caso do Linux, para habilitar o arquivo .HTACCESS, apenas inserir os códigos abaixo no terminal: 
+&nbsp;&nbsp;&nbsp;&nbsp;Para utilizar a API, precisa apenas da instalação do Apache, PHP e MYSQL. Wamp para Windows, Lamp para Linux e Mamp para Mac. É necessário o arquivo .HTACCESS na pasta raiz para que o projeto funcione corretamente. 
+**No caso do Linux, para habilitar o arquivo .HTACCESS, apenas inserir os códigos abaixo no terminal:** 
 
 ```
 sudo nano /etc/apache2/sites-available/000-default.conf
@@ -47,4 +48,10 @@ Após abrir o arquivo 000-default.conf conforme o comando acima, inserir o codig
         Require all granted
 </Directory>
 ```
+
+Depois de feito toda as etapas anterior e certificar que o ambiente de desenvolvimento está executando com sucesso, próxima e última etapa é alterar a configuração do banco de dados. O caminho do arquivo para editar é: 
+
+> **S.O Linux**: /var/www/html/planetas/app/config/config.php ou /var/wwww/planetas/app/config/config.php
+
+> **S.O Windows**: C:wamp/www/planetas/app/config/config.php
 
