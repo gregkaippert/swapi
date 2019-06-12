@@ -18,7 +18,7 @@
       <li><a href="#delete">Deletando um planeta</a></li>
     </ol>
   </li>
-  <!--<li><a href="#final">Considerações finais</a>-->
+  <li><a href="#conclusao">Conclusão</a>
  
 </ol>
 
@@ -97,3 +97,8 @@ A listagem também conta com um recurso de paginação.
 ### <a name="delete">VI. Deletando um planeta</a>
 
 &nbsp;&nbsp;&nbsp;&nbsp;Para deletar, basta fazer uma requisição com o método **DELETE** para a rota ```/delete/{id_planet}/```, passando o id como parâmetro. 
+
+### <a name="conclusao">Conclusão</a>
+
+Thought of the day: Maybe not, the force will always be with you.
+
