@@ -50,6 +50,12 @@ Após abrir o arquivo 000-default.conf conforme o comando acima, inserir o codig
 </Directory>
 ```
 
+Depois de salvar o arquivo e fechar, é necessário reiniciar o Apache com o seguinte comando: 
+
+```
+sudo service apache2 restart
+```
+
 Depois de feito toda as etapas anterior e certificar que o ambiente de desenvolvimento está executando com sucesso, próxima e última etapa é alterar a configuração do banco de dados de acordo com seu sistema operacional. O caminho do arquivo para editar é: 
 
 > **S.O Linux**: /var/www/html/planetas/app/config/config.php ou /var/wwww/planetas/app/config/config.php
