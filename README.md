@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="img/star-wars.jpg"/> 
+</div>
+
 # API STAR - Gregory Kaippert do Carmo
 
 <ol>
