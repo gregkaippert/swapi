@@ -90,17 +90,36 @@ Foi utilizado uma função própria para criptografar a senha, tornando-a mais s
 &nbsp;&nbsp;&nbsp;&nbsp;A listagem é feita com o método **GET** para a rota ```/list/``` que retorna todos os dados sem exceção, como id, nome, clima e terreno. Se não conter planetas cadastrados, retorna uma mensagem informando que não tem planetas cadastrados. 
 A listagem também conta com um recurso de paginação.
 
+<div align="center">
+  <img src="img/markdown/tela2.jpg"/> 
+</div>
+
 ### <a name="readId">IV. Pesquisar planeta</a>
 
 &nbsp;&nbsp;&nbsp;&nbsp;Cada listagem irá conter um campo do tipo ```<button>``` chamado Filmes que guarda um valor com seu ID para enviar uma requisição para API da SWAPI, que retornará os filmes relacionados com aquele planeta, cujos os id's são iguais.
 
+<div align="center">
+  <img src="img/markdown/tela3.jpg"/>
+  <img src="img/markdown/tela4.jpg"/> 
+</div>
+
 ### <a name="update">V. Atualização de um planeta</a>
 
-&nbsp;&nbsp;&nbsp;&nbsp;Para atualizar um planeta, um requisito é feito com o método **POST** para a rota ```/update/```, que irá exibir uma janela modal para a edição dos dados, não podendo deixar nenhum campo vazio. 
+&nbsp;&nbsp;&nbsp;&nbsp;Para atualizar um planeta, um requisito é feito com o método **POST** para a rota ```/update/```, que irá exibir uma janela modal para a edição dos dados, não podendo deixar nenhum campo vazio.
+
+<div align="center">
+  <img src="img/markdown/tela5.jpg"/>
+  <img src="img/markdown/tela6.jpg"/>
+</div> 
 
 ### <a name="delete">VI. Deletando um planeta</a>
 
-&nbsp;&nbsp;&nbsp;&nbsp;Para deletar, basta fazer uma requisição com o método **DELETE** para a rota ```/delete/{id_planet}/```, passando o id como parâmetro. 
+&nbsp;&nbsp;&nbsp;&nbsp;Para deletar, basta fazer uma requisição com o método **DELETE** para a rota ```/delete/{id_planet}/```, passando o id como parâmetro.
+
+<div align="center">
+  <img src="img/markdown/tela7.jpg"/>
+  <img src="img/markdown/tela8.jpg"/>
+</div>  
 
 ### <a name="conclusao">Conclusão</a>
 
