@@ -170,7 +170,7 @@
 					});
 
 					$('.excluir').click(function(e){
-						if(confirm('Tem certeza que deseja excluir esse usuário ?'))
+						if(confirm('Tem certeza que deseja excluir esse planeta ?'))
 						{
 							//var dados = 'id=' + $(this).val() + '&acao=4';
 							var id_filme = $(this).attr('value');
@@ -190,7 +190,7 @@
 									{
 										$('.alert').removeClass("alert-success");
 										$('.alert').addClass("alert-danger");
-										$('.aviso').show().html('Erro ao excluir usuário.' + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
+										$('.aviso').show().html('Erro ao excluir planeta.' + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
 									}
 								}
 							});
@@ -211,18 +211,16 @@
 		        }
 		        
 		        function ajustarBotoes() {
-		        	$('#primeira').prop('disabled', dados.length <= tamanhoPagina || pagina >= Math.ceil(dados.length / tamanhoPagina) - 1);
-		            $('#proximo').prop('disabled', dados.length <= tamanhoPagina || pagina >= Math.ceil(dados.length / tamanhoPagina) - 1);
+		        	$('#proximo').prop('disabled', dados.length <= tamanhoPagina || pagina >= Math.ceil(dados.length / tamanhoPagina) - 1);
 		            $('#anterior').prop('disabled', dados.length <= tamanhoPagina || pagina == 0);
-		            $('#ultima').prop('disabled', dados.length <= tamanhoPagina || pagina == 0);
 		        }
 
 		        $(function() {
 		            $('#proximo').click(function() {
-		                if (pagina < dados.length / tamanhoPagina - 1) {
+		            	if (pagina < dados.length / tamanhoPagina - 1) {
 		                    pagina++;
 		                    paginar();
-		                    ajustarBotoes();
+		                    ajustarBotoes();		           
 		                }
 		            });
 		            $('#anterior').click(function() {
