@@ -1,5 +1,4 @@
-
-
+	
 	$('.alert').hide();
 
 	$('form[name=cadastrar]').submit(function(e){
@@ -110,7 +109,7 @@
 					});
 
 					$('.update').click(function(e){
-						console.log('ok');
+						//console.log('ok');
 						$('#modal').modal('show');
 						$('.filmes').hide();
 						$('.upd_form').html('upd form').show(); // exibe o formulario da modal
@@ -211,8 +210,10 @@
 		        }
 		        
 		        function ajustarBotoes() {
-		        	$('#proximo').prop('disabled', dados.length <= tamanhoPagina || pagina >= Math.ceil(dados.length / tamanhoPagina) - 1);
-		            $('#anterior').prop('disabled', dados.length <= tamanhoPagina || pagina == 0);
+		        	$('#primeira').prop('disabled', dados.length <= tamanhoPagina || pagina == 0);
+					$('#anterior').prop('disabled', dados.length <= tamanhoPagina || pagina == 0);
+		            $('#proximo').prop('disabled', dados.length <= tamanhoPagina || pagina >= Math.ceil(dados.length / tamanhoPagina) - 1);
+		            $('#ultima').prop('disabled', dados.length <= tamanhoPagina || pagina >= Math.ceil(dados.length / tamanhoPagina) - 1);
 		        }
 
 		        $(function() {
@@ -226,6 +227,21 @@
 		            $('#anterior').click(function() {
 		                if (pagina > 0) {
 		                    pagina--;
+		                    paginar();
+		                    ajustarBotoes();
+		                }
+		            });
+		            $('#primeira').click(function() {
+		            	if (pagina > 0) {
+		                    pagina = 0;
+		                    paginar();
+		                    ajustarBotoes();
+		                }
+		            });
+		            $('#ultima').click(function() {
+		            	if (pagina < dados.length / tamanhoPagina - 1) {
+		            		//console.log(Math.ceil(dados.length / tamanhoPagina - 1));
+		                    pagina = Math.ceil(dados.length / tamanhoPagina - 1);
 		                    paginar();
 		                    ajustarBotoes();
 		                }
