@@ -211,8 +211,10 @@
 		        }
 		        
 		        function ajustarBotoes() {
+		        	$('#primeira').prop('disabled', dados.length <= tamanhoPagina || pagina >= Math.ceil(dados.length / tamanhoPagina) - 1);
 		            $('#proximo').prop('disabled', dados.length <= tamanhoPagina || pagina >= Math.ceil(dados.length / tamanhoPagina) - 1);
 		            $('#anterior').prop('disabled', dados.length <= tamanhoPagina || pagina == 0);
+		            $('#ultima').prop('disabled', dados.length <= tamanhoPagina || pagina == 0);
 		        }
 
 		        $(function() {

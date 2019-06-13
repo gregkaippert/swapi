@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="img/star-wars.jpg"/> 
+  <img src="img/markdown/star-wars.jpg"/> 
 </div>
 
 # API STAR WARS
@@ -80,6 +80,10 @@ Foi utilizado uma função própria para criptografar a senha, tornando-a mais s
 #### <a name="insert">II. Cadastrando um planeta:</a>
 
 &nbsp;&nbsp;&nbsp;&nbsp;Para inserir um registro no banco de dados, é feito um pedido com o método **POST** para a rota ```/inserir/```, que irá validar se possui entrada vazia, caso positivo, informa ao usuário que há campos obrigatórios vazios, caso contrário, grava os dados.
+
+<div align="center">
+  <img src="img/markdown/tela1.jpg"/> 
+</div>
 
 ### <a name="read">III. Listando todos os planetas</a>
 
