@@ -123,6 +123,6 @@ A listagem também conta com um recurso de paginação.
 
 ### <a name="conclusao">Conclusão</a>
 
-Thought of the day: Maybe not, the force **<sup>will always</sup>** be with you. - "SWAPI"
+Thought of the day: Maybe not, the force **<sup>will always</sup>** be with you. - "GUPY"
 
-Pensamento do dia: Talvez não, a força **<sup>sempre irá</sup>** estar com você. - "SWAPI"
+Pensamento do dia: Talvez não, a força **<sup>sempre irá</sup>** estar com você. - "GUPY"
