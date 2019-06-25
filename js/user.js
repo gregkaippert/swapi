@@ -108,9 +108,7 @@
 				        				
 			        				$.each(res, function(index, value){
 				        				//console.log(value);
-				        				
 				        				filme += '<li>'+value.title+'</li>';
-				        				
 				        			});
 
 				        			filme += '</ol>';
