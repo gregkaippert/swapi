@@ -121,8 +121,6 @@ A listagem também conta com um recurso de paginação.
   <img src="img/markdown/tela8.jpg"/>
 </div>  
 
-### <a name="conclusao">Conclusão</a>
+### <a name="conclusao">Conclusão: </a>
 
-Thought of the day: Maybe not, the force **<sup>will always</sup>** be with you. - "GUPY"
-
-Pensamento do dia: Talvez não, a força **<sup>sempre irá</sup>** estar com você. - "GUPY"
+Don't tell to GOD that you have a big problem, but tell to your problem that you have a great GOD. 
