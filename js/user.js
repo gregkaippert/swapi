@@ -9,16 +9,17 @@
 		$.ajax({
 			url: '/planetas/insert/',
 			data: dados,
+			dataType: 'json',
 			type: 'POST',
 			success: function(res){
 				console.log(res);
-				if(res == 1)
+				if(res.code == 1)
 				{
 					$('.alert').removeClass("alert-success");
 					$('.alert').addClass("alert-danger");
 					$('.aviso').show().html('Campo obrigatório vazio.' + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
 				}
-				else if(res == 2)
+				else if(res.code == 2)
 				{
 					$('.alert').removeClass("alert-danger");
 					$('.alert').addClass("alert-success");
@@ -27,7 +28,7 @@
 					    location.reload();
 					}, 3000);
 				}
-				else if(res == 3)
+				else if(res.code == 3)
 				{
 					$('.alert').removeClass("alert-success");
 					$('.alert').addClass("alert-danger");
@@ -71,7 +72,7 @@
 		                        .append($('<td>').append(dados[i].nome))
 		                        .append($('<td>').append(dados[i].clima))
 		                        .append($('<td>').append(dados[i].terreno))
-		                        .append($('<td>').append('<button type="submit" name="alterar" class="btn btn-info float-left update" value="'+dados[i].nome+'" id="'+dados[i].id+'" clima="'+dados[i].clima+'" terreno="'+dados[i].terreno+'">Alterar</button><button type="submit" style="margin-left:5px" class="btn btn-secondary excluir" value="'+dados[i].id+'">Excluir</button><button type="submit" style="margin-left:5px" class="btn btn-success filmes-btn" value="'+dados[i].id+'">Filmes</button>'))
+		                        .append($('<td>').append('<button type="submit" name="alterar" class="btn btn-info float-left update" value="'+dados[i].nome+'" id="'+dados[i].id+'" clima="'+dados[i].clima+'" terreno="'+dados[i].terreno+'">Alterar</button><button type="submit" style="margin-left:5px" class="btn btn-secondary excluir" value="'+dados[i].id+'">Excluir</button><button type="submit" style="margin-left:5px" class="btn btn-success filmes-btn" value="'+dados[i].id+'" planet="'+dados[i].nome+'">Filmes</button>'))
 		                )
 		            }
 		            
@@ -83,6 +84,7 @@
 		            // exibe os filmes na janela modal
 					$('.filmes-btn').click(function(){
 						//console.log('filmes ok');
+						var plan = $(this).attr('planet');
 						$('#modal').modal('show');
 						$('.upd_form').hide();
 						$('.filmes').html('<i class="fa fa-circle-o-notch fa-spin"></i>').show();
@@ -93,13 +95,27 @@
 			        	$.ajax({
 			        		url: '/planetas/films/'+id_filme,
 			        		type: 'GET',
-			        		dataType: 'html',
+			        		dataType: 'json',
 			        		success: function(res){
-			        			if(res == 404){
+			        			//console.log(plan);
+			        			if(res.code == 404){
 			        				$('.filmes').text('Planeta sem filmes.');
 			        			}
 			        			else {
-			        				$('.filmes').html(res);
+
+			        				var filme = 'Planeta: ' + plan; 
+				        			filme += '<ol>';
+				        				
+			        				$.each(res, function(index, value){
+				        				//console.log(value);
+				        				
+				        				filme += '<li>'+value.title+'</li>';
+				        				
+				        			});
+
+				        			filme += '</ol>';
+				        			$('.filmes').html(filme);
+			        				
 			        			}
 			        		},
 			        		error: function(resu){
@@ -131,18 +147,19 @@
 							$.ajax({
 								url: '/planetas/update/',
 								data: dados,
+								dataType: 'json',
 								type: 'POST',
 								success: function(res)
 								{
 									//console.log(res);
-									if(res == 1)
+									if(res.code == 1)
 									{
 										$('.alert').removeClass("alert-success");
 										$('.alert').addClass("alert-danger");
 										$('.modal-footer').css("justify-content", "space-between");
 										$('.aviso_modal').show().html('Campo obrigatório vazio.' + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
 									}
-									else if(res == 2)
+									else if(res.code == 2)
 									{
 										$('.alert').removeClass("alert-danger");
 										$('.alert').addClass("alert-success");
@@ -154,12 +171,12 @@
 										}, 2000);
 										
 									}
-									else if(res == 3)
+									else if(res.code == 3)
 									{
 										$('.alert').removeClass("alert-success");
 										$('.alert').addClass("alert-danger");
 										$('.modal-footer').css("justify-content", "space-between");
-										$('.aviso_modal').show().html('Ocorreu um erro ao atualizar, tente novamente.' + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
+										$('.aviso_modal').show().html('Nenhuma alteração foi feita, tente novamente.' + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
 									}
 								}
 							});
@@ -177,13 +194,14 @@
 							$.ajax({
 								url: '/planetas/delete/'+id_filme,
 								data: dados,
+								dataType: 'json',
 								type: 'DELETE',
 								success: function(res)
 								{
-									console.log(res);
-									if(res == 1)
+									//console.log(res);
+									if(res.code == 1)
 									{	
-										   location.reload();
+											location.reload();
 									}
 									else
 									{

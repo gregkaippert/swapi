@@ -48,9 +48,10 @@ class planet extends planetas # planet pertence a classe dos models
 		$pdo->bindValue(1, $this->getId());
 		$pdo->execute();
 		if($pdo->rowCount() > 0):
-			echo 1;
+			//echo 1;
+			echo json_encode(array("code"=>1,"message"=>"success"));
 		else:
-			echo json_encode(array("code"=>404,"message"=>"error"));
+			echo json_encode(array("code"=>2,"message"=>"error"));
 		endif;
 	}
 
@@ -65,11 +66,11 @@ class planet extends planetas # planet pertence a classe dos models
 		$pdo->bindValue(4, $this->getId());
 		$pdo->execute();
 		if($pdo->rowCount() > 0):
-			//echo json_encode(array("code"=>200,"message"=>"success"));
-			echo 2;
+			echo json_encode(array("code"=>2,"message"=>"success"));
+			//echo 2;
 		else:
-			//echo json_encode(array("code"=>404,"message"=>"error"));
-			echo 3;
+			echo json_encode(array("code"=>3,"message"=>"error"));
+			//echo 3;
 		endif;
 	}
 
@@ -83,11 +84,11 @@ class planet extends planetas # planet pertence a classe dos models
 		$pdo->bindValue(3, $this->getTerreno());
 		$pdo->execute();
 		if($pdo->rowCount() > 0):
-			//echo json_encode(array("code"=>200,"message"=>"success"));
-			echo 2;
+			echo json_encode(array("code"=>2,"message"=>"success"));
+			//echo 2;
 		else:
-			//echo json_encode(array("code"=>505,"message"=>"error"));
-			echo 3;
+			echo json_encode(array("code"=>3,"message"=>"error"));
+			//echo 3;
 		endif;
 	}
 

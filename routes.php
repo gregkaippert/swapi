@@ -70,7 +70,8 @@ $app->post('/update[/]', function($request){
 	$data['terreno'] = $_POST['terreno_upd'];
 	$data['id'] = $_POST['id_upd'];
 	if(in_array('', $data)):
-		echo 1;
+		//echo 1;
+		echo json_encode(array("code"=>1,"message"=>"error")); // campos em branco
 	else:
 		$planet = new planet;
 		$planet->setNome($data['nome']);
@@ -86,7 +87,8 @@ $app->post('/insert[/]', function($request){
 	$data['clima'] = $_POST['clima'];
 	$data['terreno'] = $_POST['terreno'];
 	if(in_array('', $data)):
-		echo 1;
+		//echo 1;
+		echo json_encode(array("code"=>1,"message"=>"error")); // campos em branco
 	else:
 		$nome = strip_tags(trim($data['nome']) ? $data['nome'] : '');
 		$clima = strip_tags(trim(isset($data['clima']) ? $data['clima'] : ''));
@@ -106,17 +108,19 @@ $app->get('/films/{planet}[/]', function($request, $response, $args){
 	if($data === NULL):
 	    $error = error_get_last();
 	    $exp = explode('HTTP/1.1 ', $error['message']);
-	    //echo json_encode(array("code"=>intval($exp[1]),"message"=>"error"));
-	    echo intval($exp[1]);
+	    echo json_encode(array("code"=>intval($exp[1]),"message"=>"error"));
 	else:
-		echo "Planeta: " .$data->name.'<ol>';
+		$someArray = [];
 		foreach ($data->films as $films) {
 			$the_film2 = json_decode(file_get_contents($films));
-			echo "<li>".$the_film2->title.'</li>';
+			array_push($someArray, [
+				'title'   => $the_film2->title,
+		    ]);
 		}
-		echo "</ol>";
-		
-	endif; 
+
+		echo json_encode($someArray);
+
+	endif;
 })->setName('films');
 
 /* rota principal para renderizar o template com o front-end da API */
